@@ -41,7 +41,7 @@ var config = module.exports = {
         query: {
           cacheDirectory: true,
           plugins: ['transform-decorators-legacy'],
-          presets: ['react', 'es2015', 'stage-2', 'stage-0']
+          presets: ['react', 'es2015', 'stage-2', 'stage-0'],
         },
       },
       {
