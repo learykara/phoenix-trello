@@ -16,7 +16,7 @@ var config = module.exports = {
   entry: {
     application: [
       web('css/application.sass'),
-      web('js/application.js'),
+      web('js/application.es6'),
     ],
   },
 
@@ -26,7 +26,7 @@ var config = module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.sass'],
+    extensions: ['', '.js', '.jsx', '.es', '.es6', '.sass'],
     modulesDirectories: ['node_modules'],
   },
 
@@ -34,13 +34,14 @@ var config = module.exports = {
     noParse: /vendor\/phoenix/,
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.(jsx?|es6)$/,
+        include: [path.resolve(__dirname + '/web')],
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
           cacheDirectory: true,
           plugins: ['transform-decorators-legacy'],
-          presets: ['react', 'es2015', 'stage-2', 'stage-0'],
+          presets: ['react', 'es2015', 'stage-2', 'stage-0']
         },
       },
       {
