@@ -38,7 +38,8 @@ defmodule PhoenixTrello.Mixfile do
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:ecto, "~> 1.1"},
-     {:comeonin, "~> 2.0"}
+     {:comeonin, "~> 2.0"},
+     {:guardian, "~> 0.9.0"}
    ]
   end
 
